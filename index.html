@@ -3,175 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="QueueLess Smart Token System using HTML5 and CSS3" />
-  <title>QueueLess — Smart Queue System</title>
+  <meta name="description" content="QueueLess dashboard: now serving, waiting count and counter load." />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Dashboard | QueueLess Smart Queue</title>
+  <link rel="icon" href="logo.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
 
   <header class="header">
-    <div class="brand">
-      <svg width="34" height="34" viewBox="0 0 40 40" aria-label="Logo">
-        <rect width="40" height="40" rx="8" fill="#2563eb" />
-        <circle cx="20" cy="20" r="10" stroke="#38bdf8" stroke-width="3" fill="none" />
-      </svg>
-      <div>
-        <h1>QueueLess <span>SmartDesk</span></h1>
-        <small>Queue Portal • <mark>Live Status</mark></small>
-      </div>
-    </div>
-
-    <nav class="nav">
-      <a href="#stats">Dashboard</a>
-      <a href="#book">Book Token</a>
-      <a href="#queue">Live Queue</a>
-      <a href="#rules">Rules</a>
+    <a class="brand" href="index.html">
+      <img src="logo.svg" width="36" height="36" alt="QueueLess logo" />
+      <span><strong>QueueLess <em>SmartDesk</em></strong><small>Queue Portal • <mark>Live</mark></small></span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Dashboard</a>
+        <a href="book-token.html">Book Token</a>
+        <a href="live-queue.html">Live Queue</a>
+        <a href="rules.html">Rules</a>
     </nav>
   </header>
 
-  <main class="container">
-
-    <section id="stats" class="grid-4">
-      <article class="card">
-        <small>NOW SERVING</small>
-        <h2 class="pulse">#101</h2>
-        <p>Counter 2 • Consultation</p>
-      </article>
-      <article class="card">
-        <small>WAITING IN LINE</small>
-        <h2>03</h2>
-        <p>1 VIP Priority Token</p>
-      </article>
-      <article class="card">
-        <small>ACTIVE COUNTERS</small>
-        <h2>4 / 4</h2>
-        <p>All Desks Online</p>
-      </article>
-      <article class="card">
-        <small>EST. WAIT TIME</small>
-        <h2>12 Min</h2>
-        <p>Avg 4 Min / Visitor</p>
-      </article>
-    </section>
-
-    <div class="grid-2">
-      <section id="book" class="card">
-        <h3>➕ Book Smart Token</h3>
-        <form action="#queue" method="get">
-          <fieldset>
-            <legend>Visitor Details</legend>
-
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" placeholder="e.g., Aarav Verma" required minlength="3" />
-
-            <label for="phone">Mobile Number (10 Digits) *</label>
-            <input type="tel" id="phone" name="phone" placeholder="9876543210" pattern="[0-9]{10}" maxlength="10" required />
-
-            <label for="dept">Select Counter *</label>
-            <select id="dept" name="dept" required>
-              <option value="">-- Choose Department --</option>
-              <option value="c1">Counter 1 — General Inquiry</option>
-              <option value="c2">Counter 2 — Consultation Desk</option>
-              <option value="c3">Counter 3 — Billing & Finance</option>
-              <option value="c4">Counter 4 — Document Verification</option>
-            </select>
-
-            <div class="radio-row">
-              <label><input type="radio" name="prio" value="normal" checked /> Normal</label>
-              <label><input type="radio" name="prio" value="vip" /> 🚨 VIP / Senior</label>
-            </div>
-
-            <button type="submit" class="btn">Generate Token</button>
-          </fieldset>
-        </form>
-      </section>
-
-      <aside class="card center">
-        <span class="tag vip">SAMPLE DIGITAL PASS</span>
-        <h2>Token #105</h2>
-        <p><strong>Counter 1</strong> • General Inquiry</p>
-
-        <svg width="80" height="80" viewBox="0 0 80 80" aria-label="QR Code">
-          <rect width="80" height="80" fill="#fff" rx="6" />
-          <rect x="8" y="8" width="22" height="22" fill="#0f172a" />
-          <rect x="50" y="8" width="22" height="22" fill="#0f172a" />
-          <rect x="8" y="50" width="22" height="22" fill="#0f172a" />
-          <rect x="34" y="34" width="14" height="14" fill="#2563eb" />
-        </svg>
-
-        <small>🔊 Counter Bell Audio:</small>
-        <audio controls>
-          <source src="bell.mp3" type="audio/mpeg" />
-        </audio>
-      </aside>
-    </div>
-
-    <section id="queue" class="card">
-      <h3>📋 Live Queue Status</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Token</th>
-            <th>Visitor Name</th>
-            <th>Department</th>
-            <th>Counter</th>
-            <th>Priority</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>#101</strong></td>
-            <td>Aarav Verma</td>
-            <td>Consultation Desk</td>
-            <td>Counter 2</td>
-            <td><span class="tag normal">Normal</span></td>
-            <td><span class="tag serve">🔔 Serving</span></td>
-          </tr>
-          <tr>
-            <td><strong>#102</strong></td>
-            <td>Dr. Kavita Iyer</td>
-            <td>Billing & Finance</td>
-            <td>Counter 3</td>
-            <td><span class="tag vip">🚨 VIP</span></td>
-            <td><span class="tag wait">⏳ Waiting</span></td>
-          </tr>
-          <tr>
-            <td><strong>#103</strong></td>
-            <td>Rohan Malhotra</td>
-            <td>General Inquiry</td>
-            <td>Counter 1</td>
-            <td><span class="tag normal">Normal</span></td>
-            <td><span class="tag wait">⏳ Waiting</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    
-    <section id="rules" class="grid-2">
-      <div class="card">
-        <h3>📌 Steps (Ordered List)</h3>
-        <ol>
-          <li>Fill visitor details in the form.</li>
-          <li>Get your token number & QR slip.</li>
-          <li>Wait for your turn on the screen.</li>
-        </ol>
+  <main id="main" class="container">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <h1 id="hero-title">Skip the line, <span>not the service</span></h1>
+        <p>Book a digital token, watch the live queue and arrive exactly when it is your turn.</p>
+        <p class="actions"><a class="btn" href="book-token.html">Book a Token</a> <a class="btn ghost" href="live-queue.html">View Live Queue</a></p>
       </div>
-      <div class="card">
-        <h3>⚡ Rules (Unordered List)</h3>
-        <ul>
-          <li>Senior Citizens get priority entry.</li>
-          <li>Keep original ID ready at Counter 4.</li>
-          <li>Missed tokens require re-registration.</li>
-        </ul>
+      <figure>
+        <img src="logo.svg" width="130" height="130" alt="" />
+        <figcaption>Smart tokens for every counter</figcaption>
+      </figure>
+    </section>
+
+    <section class="grid-4" aria-label="Queue summary">
+      <article class="card"><small>NOW SERVING</small><h2 class="pulse">#101</h2><p>Counter 2 • Consultation</p></article>
+      <article class="card"><small>WAITING IN LINE</small><h2>03</h2><p>1 <abbr title="Very Important Person">VIP</abbr> priority token</p></article>
+      <article class="card"><small>ACTIVE COUNTERS</small><h2>4 / 4</h2><p>All desks online</p></article>
+      <article class="card"><small>EST. WAIT TIME</small><h2>12 Min</h2><p>Avg 4 min per visitor</p></article>
+    </section>
+
+    <section aria-labelledby="counters-title">
+      <h2 id="counters-title">Counter Load</h2>
+      <div class="grid-4">
+        <article class="card"><h3>Counter 1</h3><p>General Inquiry</p><meter min="0" max="5" low="2" high="4" optimum="0" value="1">1 waiting</meter><small>1 waiting</small></article>
+        <article class="card"><h3>Counter 2</h3><p>Consultation Desk</p><meter min="0" max="5" low="2" high="4" optimum="0" value="0">0 waiting</meter><small>0 waiting</small></article>
+        <article class="card"><h3>Counter 3</h3><p>Billing &amp; Finance</p><meter min="0" max="5" low="2" high="4" optimum="0" value="1">1 waiting</meter><small>1 waiting</small></article>
+        <article class="card"><h3>Counter 4</h3><p>Document Verification</p><meter min="0" max="5" low="2" high="4" optimum="0" value="1">1 waiting</meter><small>1 waiting</small></article>
       </div>
     </section>
-
   </main>
 
   <footer class="footer">
-    <p>&copy; 2026 QueueLess Smart Queue System • Pure HTML5 & CSS3</p>
+    <p>&copy; 2026 QueueLess • Pure HTML5 &amp; CSS3 •
+      <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/" target="_blank" rel="noopener">Accessibility basics</a></p>
   </footer>
-
 </body>
 </html>
