@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Live queue table with token, counter, priority and status." />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Live Queue | QueueLess Smart Queue</title>
+  <link rel="icon" href="logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <header class="header">
+    <a class="brand" href="index.html">
+      <img src="logo.svg" width="36" height="36" alt="QueueLess logo" />
+      <span><strong>QueueLess <em>SmartDesk</em></strong><small>Queue Portal • <mark>Live</mark></small></span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Dashboard</a>
+        <a href="book-token.html">Book Token</a>
+        <a href="live-queue.html" aria-current="page">Live Queue</a>
+        <a href="rules.html">Rules</a>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+    <h1>Live Queue Status</h1>
+    <section class="card" aria-labelledby="queue-title">
+      <h2 id="queue-title">Today's Tokens</h2>
+      <p>Last updated at <time datetime="10:30">10:30 AM</time></p>
+      <div class="table-wrap">
+        <table>
+          <caption>Tokens currently in the queue</caption>
+          <thead>
+            <tr><th scope="col">Token</th><th scope="col">Visitor</th><th scope="col">Department</th><th scope="col">Counter</th><th scope="col">Priority</th><th scope="col">Status</th></tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">#101</th><td>Aarav Verma</td><td>Consultation Desk</td><td>Counter 2</td>
+            <td><span class="tag normal">Normal</span></td><td><span class="tag serve">🔔 Serving</span></td>
+          </tr>
+          <tr>
+            <th scope="row">#102</th><td>Dr. Kavita Iyer</td><td>Billing &amp; Finance</td><td>Counter 3</td>
+            <td><span class="tag vip">🚨 VIP</span></td><td><span class="tag wait">⏳ Waiting</span></td>
+          </tr>
+          <tr>
+            <th scope="row">#103</th><td>Rohan Malhotra</td><td>General Inquiry</td><td>Counter 1</td>
+            <td><span class="tag normal">Normal</span></td><td><span class="tag wait">⏳ Waiting</span></td>
+          </tr>
+          <tr>
+            <th scope="row">#104</th><td>Priya Singh</td><td>Document Verification</td><td>Counter 4</td>
+            <td><span class="tag normal">Normal</span></td><td><span class="tag wait">⏳ Waiting</span></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <p><a href="book-token.html">+ Book a new token</a></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 QueueLess • Pure HTML5 &amp; CSS3 •
+      <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/" target="_blank" rel="noopener">Accessibility basics</a></p>
+  </footer>
+</body>
+</html>
