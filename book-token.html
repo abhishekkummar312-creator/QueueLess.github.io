@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book a smart queue token with name, phone and counter." />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Book Token | QueueLess Smart Queue</title>
+  <link rel="icon" href="logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <header class="header">
+    <a class="brand" href="index.html">
+      <img src="logo.svg" width="36" height="36" alt="QueueLess logo" />
+      <span><strong>QueueLess <em>SmartDesk</em></strong><small>Queue Portal • <mark>Live</mark></small></span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Dashboard</a>
+        <a href="book-token.html" aria-current="page">Book Token</a>
+        <a href="live-queue.html">Live Queue</a>
+        <a href="rules.html">Rules</a>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+    <h1>Book Smart Token</h1>
+    <div class="grid-2">
+      <section class="card" aria-labelledby="form-title">
+        <h2 id="form-title">Visitor Details</h2>
+        <form action="live-queue.html" method="get">
+          <label for="name" class="req">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="e.g., Aarav Verma" required minlength="3" autocomplete="name" />
+
+          <label for="phone" class="req">Mobile Number (10 digits)</label>
+          <input type="tel" id="phone" name="phone" placeholder="9876543210" pattern="[0-9]{10}" maxlength="10" title="Enter exactly 10 digits" required autocomplete="tel" />
+
+          <label for="email">Email (optional)</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+
+          <label for="dept" class="req">Select Counter</label>
+          <select id="dept" name="dept" required>
+            <option value="">-- Choose Department --</option>
+            <option value="c1">Counter 1 — General Inquiry</option>
+            <option value="c2">Counter 2 — Consultation Desk</option>
+            <option value="c3">Counter 3 — Billing &amp; Finance</option>
+            <option value="c4">Counter 4 — Document Verification</option>
+          </select>
+
+          <fieldset class="radio-row">
+            <legend>Priority</legend>
+            <label><input type="radio" name="prio" value="normal" checked /> Normal</label>
+            <label><input type="radio" name="prio" value="vip" /> 🚨 VIP / Senior</label>
+          </fieldset>
+
+          <label class="check"><input type="checkbox" name="agree" required /> I confirm the details above are correct.</label>
+          <button type="submit" class="btn">Generate Token</button>
+        </form>
+      </section>
+
+      <aside class="card center" aria-labelledby="pass-title">
+        <span class="tag vip">SAMPLE DIGITAL PASS</span>
+        <h2 id="pass-title">Token #105</h2>
+        <p><strong>Counter 1</strong> • General Inquiry</p>
+        <svg width="90" height="90" viewBox="0 0 80 80" role="img" aria-label="Sample QR code">
+          <rect width="80" height="80" fill="#fff" rx="6" />
+          <rect x="8" y="8" width="22" height="22" fill="#0f172a" />
+          <rect x="50" y="8" width="22" height="22" fill="#0f172a" />
+          <rect x="8" y="50" width="22" height="22" fill="#0f172a" />
+          <rect x="34" y="34" width="14" height="14" fill="#2563eb" />
+        </svg>
+        <small>🔊 Counter bell sound</small>
+        <audio controls>
+          <source src="bell.mp3" type="audio/mpeg" />
+          Your browser does not support audio.
+        </audio>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 QueueLess • Pure HTML5 &amp; CSS3 •
+      <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/" target="_blank" rel="noopener">Accessibility basics</a></p>
+  </footer>
+</body>
+</html>
